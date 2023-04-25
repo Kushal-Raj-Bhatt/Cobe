@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test datepicker bug</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link href="https://unpkg.com/bulma-calendar@6.0.7/dist/css/bulma-calendar.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/bulma-calendar@6.0.7/dist/js/bulma-calendar.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+        <input type="text" class="datetimepicker-dummy-input" data-display-mode="dialog" id="date" name="date" value="2022-06-23">
+    </div>
+  </section>
+  <script>
+            bulmaCalendar.attach('#date', {
+        dateFormat: "DD-MMM-YYYY",
+        type: 'datetime',
+        showClearButton: false
+      });
+      document.querySelector('#date').bulmaCalendar.on('select', date => {console.log(date)});
+
+    </script>
+  </body>
+</html>
